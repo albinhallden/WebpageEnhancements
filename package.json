@@ -1,0 +1,19 @@
+{
+  "name": "webpage_enhancements",
+  "version": "1.0.0",
+  "description": "Collection of webpage scripts to enhance experience",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albinhallden/WebpageEnhancements.git"
+  },
+  "author": "Albin Halldén",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/albinhallden/WebpageEnhancements/issues"
+  },
+  "homepage": "https://github.com/albinhallden/WebpageEnhancements#readme",
+  "dependencies": {
+    "eslint-config-ahallden": "^1.2.0"
+  },
+  "devDependencies": {}
+}
