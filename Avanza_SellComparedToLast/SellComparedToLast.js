@@ -1,19 +1,20 @@
-var rows = document.querySelectorAll('.tablesorter .clientSortedRow');
-for (var i = 0; i < rows.length; i++) {
-  var sellPrice = rows[i].querySelector('.sellPrice');
-  var lastPrice = rows[i].querySelector('.lastPrice');
+Array.prototype.slice.call(
+  document.querySelectorAll('.tablesorter .clientSortedRow')
+).forEach(row => {
+  const sellPrice = row.querySelector('.sellPrice');
+  const lastPrice = row.querySelector('.lastPrice');
 
-  var negativeClass = 'negative';
-  var positiveClass = 'positive';
-  
   try {
-    var sell = parseFloat(sellPrice.innerHTML.replace(',', '.'), 10);
-    var last = parseFloat(lastPrice.children[0].innerHTML.replace(',', '.'), 10);
+    const sell = parseFloat(sellPrice.innerHTML.replace(',', '.'), 10);
+    const last = parseFloat(lastPrice.children[0].innerHTML.replace(',', '.'), 10);
 
-    if (sell < last) sellPrice.classList.add(negativeClass);
-    else if (sell > last) sellPrice.classList.add(positiveClass);
-    console.log('Parsed ', lastPrice, sellPrice, rows[i], last, sell);
+    if (sell < last) {
+      sellPrice.classList.add('negative');
+    } else if (sell > last) {
+      sellPrice.classList.add('positive');
+    }
+    console.log('Parsed ', lastPrice, sellPrice, row, last, sell);
   } catch (error) {
-    console.log('could not parse ', rows[i], error);
+    console.log('could not parse ', row, error);
   }
-}
+});
