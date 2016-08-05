@@ -1,3 +1,6 @@
 {
-  "extends": "eslint-config-ahallden"
+  "extends": "eslint-config-ahallden",
+  "rules": {
+   "no-console": 0 
+  }
 }
